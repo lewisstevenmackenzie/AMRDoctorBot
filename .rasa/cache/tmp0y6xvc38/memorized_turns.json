@@ -1,0 +1,9 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_initial_symptoms",
+    "eJyFjMEJgDAMAFfJAE7QVURCkSCBNi1JKkjp7hb0K/7u4Li1jwV6VTox7s5FAvQHUGKmAK8kNieZbTPS2bBM9QCHEvn4eTR3UmRh55jQrly9ZPucbTeyJTlV": "action_listen",
+    "eJydjtEJwCAMBVfJAJ3AVUoRaUMJaJQkFkTcvUL7X+jfOziOt/axQC+Clw+7UWYH/RmeQ0IHL0RSQ55uVZTpEE80B6cg2vhoVDMUT0xGIXptqVhO+jP2cehAbmNsNw01UsI=": "utter_why_no_antibiotics",
+    "eJydjlEKgzAQRK+SA/QEuUopS2qXOmA2kowtIXh3A/ZTUPo3D4bHu7f15tqc9SNhIJJ51/YhFqJ694MJhWr9uxTN/QPrSO/eWZXriWMhNQsMRJik1DgzxfKn7CTopVav9XzHKpYkGPFEIoaDot322ADjxHDi": "action_listen"
+  }
+}

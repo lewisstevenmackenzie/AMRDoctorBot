@@ -1,0 +1,82 @@
+version: "3.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - ask_for_chatbot_number
+  - ask_symptoms
+  - confirm
+  - deny
+  - maybe
+  - goodbye
+  - greet
+  - inform
+responses:
+  utter_greet:
+    - text: |
+        Hi!
+  utter_initial_symptoms:
+    - text: |
+        Hi Doctor, I’m not feeling 100% today. I think I might have a cold. I’ve got a runny nose, my throat is also a bit red and sore, and I’ve had a dry cough for a couple of days. Can I have some antibiotics, please?
+  utter_end_conversation:
+    - text: |
+        okay, thanks for chatting to me. I'll take on board the information you've given me when I come for future consultations.
+  utter_ask_chat_number:
+    - text: |
+        Right, I'm going to give you a number, could you please type this into the survey response so that we can match this conversation to your survey inorder to assure you are paid appropriatly?
+  utter_goodbye:
+    - text: |
+        okay, thanks for your help today. If you have taken note of your unique conversation number then feel free to close this conversation. Goodbye.
+  utter_goodbye_no_number:
+    - text: |
+        Okay, thanks for your time. however without the chatbot code we will be unable to gaurantee payment for this survey.
+  utter_goodbye_only:
+    - text: |
+        Bye.
+  utter_confirm_refusal:
+    - text: |
+        Are you sure? If you don't do this, we will be unable to pay for your survey participation.
+  utter_why_no_antibiotics:
+    - text: |
+        Okay, but why would you not give me antibiotics? They’ve worked for me in the past.
+  utter_what_is_AMR:
+    - text: |
+        So, I've heard a lot of people talking about antimicrobial resistance. What is it?
+  utter_antibiotic_use:
+    - text: |
+        Okay but when would you normally prescribe antibiotics?
+
+  utter_alternative_medication:
+    - text: |
+        Is there any other medication that I can take to make me feel better?
+  utter_why_prescribe:
+    - text: |
+        Ah perfect, thanks. Out of curiosity, why are you prescribing me antibiotics rather that other medication?
+  utter_AMR_concern:
+    - text: |
+        I've read a lot about something called antimicrobial resistance, should I be concerned about this?
+  utter_please_rephrase:
+    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_default:
+    - text: Sorry I didn't get that. Can you rephrase?
+actions:
+  - "..."
+  - action_generate_chatbot_number
+  - action_repeat_symptoms
+  - action_tell_use_case_example
+  - utter_AMR_concern
+  - utter_alternative_medication
+  - utter_antibiotic_use
+  - utter_ask_chat_number
+  - utter_confirm_refusal
+  - utter_end_conversation
+  - utter_goodbye
+  - utter_goodbye_no_number
+  - utter_goodbye_only
+  - utter_greet
+  - utter_initial_symptoms
+  - utter_what_is_AMR
+  - utter_why_no_antibiotics
+  - utter_why_prescribe
+  - utter_please_rephrase
+  - utter_default
