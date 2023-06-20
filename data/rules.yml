@@ -1,63 +1,26 @@
 rules:
-  # # conda activate installingrasa
-  # - rule: story flow for denial
-  #   steps:
-  #     - action: action_tell_use_case_example
-  #     - intent: deny
-  #     - action: utter_why_no_antibiotics
-  #     - intent: inform
-  #     - action: utter_what_is_AMR
-  #     - intent: inform
-  #     - action: utter_antibiotic_use
-  #     - intent: inform
-  #     - action: utter_alternative_medication
-  #     - intent: inform
-  #     - action: utter_end_conversation
-  #     - action: utter_ask_chat_number
-
-  # - rule: story flow for maybe
-  #   steps:
-  #     - action: action_tell_use_case_example
-  #     - intent: maybe
-  #     - action: utter_why_no_antibiotics
-  #     - intent: inform
-  #     - action: utter_what_is_AMR
-  #     - intent: inform
-  #     - action: utter_antibiotic_use
-  #     - intent: inform
-  #     - action: utter_alternative_medication
-  #     - intent: inform
-  #     - action: utter_end_conversation
-  #     - action: utter_ask_chat_number
-
   - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
     steps:
       - intent: nlu_fallback
       - action: utter_please_rephrase
 
-  - rule: user wants number
-    steps:
-      - action: utter_ask_chat_number
-      - intent: confirm
-      - action: action_generate_chatbot_number
-      - action: utter_goodbye
+  # - rule: user wants number
+  #   steps:
+  #     - action: utter_ask_chat_number
+  #     - intent: confirm
+  #     - action: action_generate_chatbot_number
+  #     - action: utter_goodbye
 
-  - rule: user doesn't want number
-    steps:
-      - action: utter_ask_chat_number
-      - intent: deny
-      - action: utter_confirm_refusal
+  # - rule: user doesn't want number
+  #   steps:s
+  #     - action: utter_ask_chat_number
+  #     - intent: deny
+  #     - action: utter_confirm_refusal
 
-  - rule: confirm refusal
-    steps:
-      - action: utter_confirm_refusal
-      - intent: confirm
-      - action: utter_goodbye_no_number
-
-  - rule: deny refusal
-    steps:
-      - action: utter_confirm_refusal
-      - intent: deny
-      - action: action_generate_chatbot_number
-      - action: utter_goodbye
+  # - rule: confirm refusal
+  #   steps:
+  #     - action: utter_confirm_refusal
+  #     - intent: confirm
+  #     - action: utter_goodbye_no_number
 #Hello Doctor, I'm not feeling 100% today and I think I might have a chest infection. I've had a persistent cough for  a couple of days, I've been coughing up yellow phlegm and I've got a temperature. I'm also feeling quite breathless. Can I have antibiotics, please?
+# conda activate installingrasa

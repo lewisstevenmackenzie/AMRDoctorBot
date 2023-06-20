@@ -28,14 +28,26 @@ nlu:
       - i'm okay with that
       - yeah, i can do that for you
       - yeh, that's fine
+      - i would do that 
+      - i think that's best
+      - that'll work 
+      - yeah
+      - ye
+      - probably
+      - sure
+      - you need antibiotic
+      - they would work
+
   - intent: deny
     examples: |
       - no
       - nope
       - not at all
+      - you don't need antibiotics
       - not really
       - nein
       - i don't think that's the best option
+      - they wouldn't work
       - I dont think you require it but maybe I can check you over first?
   - intent: maybe
     examples: |
@@ -43,7 +55,11 @@ nlu:
       - maybe you need to tell me more before i can decide
       - i'm not sure on the best option to follow
       - i wouldn't want to prescribe aanything based solely on these symptoms
-      - it's not that simple, id need to do a further examination before prescribing you any medication
+      - it's not that simple, i'd need to do a further examination before prescribing you any medication
+      - maybe
+      - it might be an option
+      - it's a possibility.
+      - we can look into it
   - intent: inform
     examples: |
       - beacuse in your situation antibiotics may not be necessary for your condition because it is likely caused by a viral infection, which antibiotics are ineffective against, and your body's immune system is capable of resolving it on its own with symptomatic treatment.
@@ -79,6 +95,8 @@ nlu:
       - not really, if you only take antibiotics every now and again there shouldnt be much concern regarrding amr
       - beause i'm not sure from your symptoms that your infection is bacterial. it seems to be more of a viral infection
       - the issue is that antibiotics are not a solution to fix all problems. your symptoms sound more close to a viral infection. therefore they'll have no affect
+      - usually if a patient has been ill for seceral ays and has an increased temperature, also most patients tend to have a mucus cough
+      - some patients  tend to be extremely ill and unable to speak. they might also have a sore throat with a phlemmy cough and temperature.
   # - intent: inform_what_is_amr
   #   examples: |
   #     -

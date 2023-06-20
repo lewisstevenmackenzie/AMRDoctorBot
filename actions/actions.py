@@ -77,8 +77,9 @@ class ActionGenerateChatbotNumber(Action):
         print("Timestamp is:", ts)
 
         rnd_num = rnd.random()
-            
-        msg = f"Your chatbot number is: {ts}\n"
+        msg = "Right, I'm going to give you a number, could you please type this into the MTurk response so that we can match this conversation to your survey inorder to assure you are paid appropriatly \n"   
+         
+        msg = msg + f"Your unique chatbot number is: {ts}\n"
 
         # msg = msg + f"Hi, my name is sarah, I'm 40 years old and I've got a bacterial infection that is causing swelling in my throat etc.\n"
 

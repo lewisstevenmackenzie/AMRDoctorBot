@@ -1,0 +1,31 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}]": "action_generate_chatbot_number",
+      "[{\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"action_generate_chatbot_number\"}, \"user\": {\"intent\": \"deny\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"action_generate_chatbot_number\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"deny\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "utter_please_rephrase",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_please_rephrase\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_ask_chat_number\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_ask_chat_number\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_generate_chatbot_number",
+      "[{\"prev_action\": {\"action_name\": \"utter_ask_chat_number\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_generate_chatbot_number\"}, \"user\": {\"intent\": \"confirm\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"utter_ask_chat_number\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_generate_chatbot_number\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]": "utter_goodbye_no_number",
+      "[{\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye_no_number\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_ask_chat_number\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}]": "utter_confirm_refusal",
+      "[{\"prev_action\": {\"action_name\": \"utter_ask_chat_number\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}, \"user\": {\"intent\": \"deny\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"utter_confirm_refusal\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_please_rephrase\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "predicting default action with intent restart"
+    ]
+  }
+}
