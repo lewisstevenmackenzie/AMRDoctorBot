@@ -29,7 +29,7 @@ responses:
         okay, thanks for your help today. If you have taken note of your unique conversation number then feel free to close this conversation. Goodbye.
   utter_goodbye_no_number:
     - text: |
-        Okay, thanks for your time. however without the chatbot code we will be unable to gaurantee payment for this survey.
+        Okay, thanks for your time. however without the chatbot code we will be unable to guarantee payment for this survey.
   utter_goodbye_only:
     - text: |
         Bye.
@@ -51,7 +51,7 @@ responses:
         Is there any other medication that I can take to make me feel better?
   utter_why_prescribe:
     - text: |
-        Ah perfect, thanks. Out of curiosity, why are you prescribing me antibiotics rather that other medication?
+        Thank you, that makes me feel a lot better. I was wondering though, could you could tell me why you are prescribing me antibiotics rather that a different form of medication?
   utter_AMR_concern:
     - text: |
         I've read a lot about something called antimicrobial resistance, should I be concerned about this?
