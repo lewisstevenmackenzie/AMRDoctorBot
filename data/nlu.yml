@@ -60,49 +60,58 @@ nlu:
       - it might be an option
       - it's a possibility.
       - we can look into it
-  - intent: inform
+
+  # - intent: inform
+  #   examples: |
+
+  #     - Although antimicrobial resistance is a serious issue, as a doctor, I work diligently to stay updated on the latest guidelines, employ evidence-based practices, and engage in antimicrobial stewardship programs to address the challenge effectively and ensure optimal patient care.
+  #     - While antimicrobial resistance necessitates awareness and proactive measures, it is essential to understand that as a doctor, I am committed to responsible antibiotic use, prudent prescribing practices, and implementing multidisciplinary approaches to prevent the emergence and spread of resistance within my patient population.
+  #     - of course, sometimes it can be safer to prescribe antibiotics just incase the illness is of a bacterial origin
+  #     - not really, if you only take antibiotics every now and again there shouldnt be much concern regarrding amr
+  #     - usually if a patient has been ill for seceral ays and has an increased temperature, also most patients tend to have a mucus cough
+  #     - some patients  tend to be extremely ill and unable to speak. they might also have a sore throat with a phlemmy cough and temperature.
+
+  - intent: inform_why_not_prescribe
     examples: |
-      - beacuse in your situation antibiotics may not be necessary for your condition because it is likely caused by a viral infection, which antibiotics are ineffective against, and your body's immune system is capable of resolving it on its own with symptomatic treatment.
-      - it's important to understand that your symptoms are likely due to a non-bacterial cause, such as a mild respiratory virus, and prescribing antibiotics may not only be unnecessary but could also contribute to the development of antibiotic resistance.
-      - I want to reassure you that your current symptoms, such as a sore throat, are commonly caused by a viral infection, which doesn't respond to antibiotics. It's best to focus on rest, hydration, and over-the-counter remedies to alleviate discomfort rather than relying on antibiotics.
       - because it is very possible that your illness is probably viral and antibiotics are not effective against this
-      - Antibiotics are a class of medications that are used to treat bacterial infections by killing or inhibiting the growth of bacteria, helping to alleviate symptoms and promote recovery.
-      - Antibiotics are drugs designed to combat bacterial infections by targeting and killing bacteria or inhibiting their growth, aiding in the treatment of various infectious diseases.
-      - Antibiotics are powerful medications designed to combat bacterial infections by targeting and killing bacteria or inhibiting their growth, aiding in the treatment of various infectious diseases.
+      - it's important to understand that your symptoms are likely due to a non-bacterial cause, such as a mild respiratory virus, and prescribing antibiotics may not only be unnecessary but could also contribute to the development of antibiotic resistance.
+      - beacuse in your situation antibiotics may not be necessary for your condition because it is likely caused by a viral infection, which antibiotics are ineffective against, and your body's immune system is capable of resolving it on its own with symptomatic treatment.
+      - beause i'm not sure from your symptoms that your infection is bacterial. it seems to be more of a viral infection
+      - the issue is that antibiotics are not a solution to fix all problems. your symptoms sound more close to a viral infection. therefore they'll have no affect
+  - intent: inform_why_prescribe
+    examples: |
+      - I recommend considering antibiotics when your condition shows signs of a bacterial infection, such as high fever, severe pain, or worsening symptoms, as they can target the underlying bacterial cause and assist in resolving the infection effectively.
+      - As a doctor, I may prescribe antibiotics if your symptoms are consistent with a bacterial infection that requires targeted treatment to prevent complications.
+      - Antibiotics may be necessary to combat a severe bacterial infection that could potentially spread and cause further harm, and as a doctor, I may consider prescribing them in such cases.
+      - If your condition shows signs of a bacterial infection and other conservative measures have proven ineffective, I, as a doctor, might recommend antibiotics to help eradicate the underlying infection and promote your recovery.
+      - I want to reassure you that your current symptoms, such as a sore throat, are commonly caused by a viral infection, which doesn't respond to antibiotics. It's best to focus on rest, hydration, and over-the-counter remedies to alleviate discomfort rather than relying on antibiotics.
+      - it is important for me to prescribe antibiotics in certain cases when there is a clear bacterial infection present, as antibiotics can effectively target and eliminate the bacteria, aiding in a faster recovery and preventing potential complications.
+      - antibiotics may be necessary when your symptoms and diagnostic tests indicate a bacterial infection that could lead to serious complications if left untreated, helping to eradicate the bacteria and promote healing.
+  - intent: inform_what_is_amr
+    examples: |
       - Antimicrobial resistance refers to the ability of microorganisms, such as bacteria, viruses, and fungi, to withstand the effects of drugs that were once effective in treating infections, leading to the persistence and spread of drug-resistant strains.
       - Antimicrobial resistance occurs when the medications designed to kill or inhibit the growth of microorganisms become less effective, posing a significant global health threat by reducing the effectiveness of antibiotics and other antimicrobial treatments.
       - Antimicrobial resistance is the phenomenon where microorganisms evolve and adapt, rendering antibiotics and other antimicrobial drugs less effective, posing a serious challenge in the treatment and control of infectious diseases.
       - AMR refers to the ability of microorganisms to develop mechanisms that make medications ineffective against them, compromising the effectiveness of treatments and necessitating the development of new strategies to combat infectious diseases.
       - Antibiotic resistance occurs when bacteria adapt and develop mechanisms that render antibiotics less effective, making it increasingly challenging to treat bacterial infections and posing a global public health threat.
-      - it is important for me to prescribe antibiotics in certain cases when there is a clear bacterial infection present, as antibiotics can effectively target and eliminate the bacteria, aiding in a faster recovery and preventing potential complications.
-      - antibiotics may be necessary when your symptoms and diagnostic tests indicate a bacterial infection that could lead to serious complications if left untreated, helping to eradicate the bacteria and promote healing.
-      - I recommend considering antibiotics when your condition shows signs of a bacterial infection, such as high fever, severe pain, or worsening symptoms, as they can target the underlying bacterial cause and assist in resolving the infection effectively.
-      - If there's signs of a baterial infection
-      - I don’t think you need any medicine at the moment. You can take regular Paracetamol and drink plenty of water, and make an appointment if your symptoms worsen.
-      - You might want to paracetamol
-      - perhaps you could try ibuprofen
-      - you can get medication from over the counter that will help you to feel better.
-      - As a doctor, I may prescribe antibiotics if your symptoms are consistent with a bacterial infection that requires targeted treatment to prevent complications.
-      - Antibiotics may be necessary to combat a severe bacterial infection that could potentially spread and cause further harm, and as a doctor, I may consider prescribing them in such cases.
-      - If your condition shows signs of a bacterial infection and other conservative measures have proven ineffective, I, as a doctor, might recommend antibiotics to help eradicate the underlying infection and promote your recovery.
       - antimicrobial resistance as it poses a significant threat, limiting the effectiveness of antibiotics and making it harder to treat infections in the future
       - Antimicrobial resistance is a growing concern for healthcare providers like me because it jeopardizes our ability to effectively combat infections and may lead to higher mortality rates and prolonged illness.
       - Being vigilant about antimicrobial resistance is important for doctors as it highlights the urgent need to preserve the effectiveness of antibiotics, ensuring their availability for future generations and preventing the spread of resistant bacteria that can cause serious health complications.
       - While antimicrobial resistance is a global health concern, it's important to note that as a doctor, I prioritize appropriate antibiotic prescribing, infection control measures, and patient education to mitigate the risks and minimize the impact of resistance.
-      - Although antimicrobial resistance is a serious issue, as a doctor, I work diligently to stay updated on the latest guidelines, employ evidence-based practices, and engage in antimicrobial stewardship programs to address the challenge effectively and ensure optimal patient care.
-      - While antimicrobial resistance necessitates awareness and proactive measures, it is essential to understand that as a doctor, I am committed to responsible antibiotic use, prudent prescribing practices, and implementing multidisciplinary approaches to prevent the emergence and spread of resistance within my patient population.
-      - of course, sometimes it can be safer to prescribe antibiotics just incase the illness is of a bacterial origin
-      - not really, if you only take antibiotics every now and again there shouldnt be much concern regarrding amr
-      - beause i'm not sure from your symptoms that your infection is bacterial. it seems to be more of a viral infection
-      - the issue is that antibiotics are not a solution to fix all problems. your symptoms sound more close to a viral infection. therefore they'll have no affect
-      - usually if a patient has been ill for seceral ays and has an increased temperature, also most patients tend to have a mucus cough
-      - some patients  tend to be extremely ill and unable to speak. they might also have a sore throat with a phlemmy cough and temperature.
-  # - intent: inform_what_is_amr
-  #   examples: |
-  #     -
-  #     -
-  #     -
-  #     -
+  - intent: inform_when_to_prescribe
+    examples: |
+      - If there's signs of a baterial infection
+      - Antibiotics are a class of medications that are used to treat bacterial infections by killing or inhibiting the growth of bacteria, helping to alleviate symptoms and promote recovery.
+      - Antibiotics are drugs designed to combat bacterial infections by targeting and killing bacteria or inhibiting their growth, aiding in the treatment of various infectious diseases.
+      - Antibiotics are powerful medications designed to combat bacterial infections by targeting and killing bacteria or inhibiting their growth, aiding in the treatment of various infectious diseases.
+  - intent: inform_antibiotic_symptoms
+    examples: |
+      - I will review the patient's medical history, assess the severity and site of the infection, evaluate any known allergies or potential drug interactions, and take into account local antibiotic resistance patterns to ensure the most appropriate and effective treatment. 
+      - Before prescribing antibiotics, I will assess the patient's symptoms, medical history, severity of infection, allergies, potential drug interactions, and local antibiotic resistance patterns.
+      - Prior to prescribing antibiotics, I consider the patient's symptoms, medical history, infection severity, allergies, potential drug interactions, and local resistance patterns.
+      - i would look for the severity of the symptoms 
+      - i might check for local resistance to medication
+      - i would first of need to assess the severity of the infection.
   - intent: ask_for_chatbot_number
     examples: |
       - okay, what is my number?
@@ -121,3 +130,29 @@ nlu:
       - how long have you had this for?
       - how long have you been feeling like this?
       - i think that it's best that you perhaps tell me more about your condition before i can fully assess you.
+  - intent: ask_more_information
+    examples: |
+      - can you give me some more informetion
+      - what more can you tell me about your condition
+      - do you have anything else that's wrong with you
+      - are you experiencing anymore issues?
+      -  before i can prescribe you this medication i'll need to get some more information from you
+      - i'll need to ask you some more questions before i can prescribe any medication
+  - intent: Ask_prescription_history
+    examples: |
+      - have you ever taken any antibiotics in the past?
+      - have you been on this medication before?
+      - do you have a history of taking antibiotics?
+      - have you used antibiotics before?
+  - intent: Prescribe
+    examples: |
+      - i'm going to prescribe you some antibiotics
+      - can you take this medication for 2 weeks please
+      - okay, i'm going to recommend that you take antibiotics for 3 weeks and do not miss a dose.
+      - i think that for your situation i would prescribe bed rest and paracetamol
+      - paracetamol should be enough for your illness
+      - ibuprofen will be adequate
+      - You might want to paracetamol
+      - perhaps you could try ibuprofen
+      - you can get medication from over the counter that will help you to feel better.
+      - I don’t think you need any medicine at the moment. You can take regular Paracetamol and drink plenty of water, and make an appointment if your symptoms worsen.
