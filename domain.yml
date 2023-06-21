@@ -10,7 +10,16 @@ intents:
   - maybe
   - goodbye
   - greet
-  - inform
+  #- inform
+  - inform_what_is_amr
+  - inform_why_not_prescribe
+  - inform_when_to_prescribe
+  - inform_why_prescribe
+  - inform_antibiotic_symptoms
+  - ask_more_information
+  - Ask_prescription_history
+  - Prescribe
+
 responses:
   utter_greet:
     - text: |
@@ -55,6 +64,12 @@ responses:
   utter_AMR_concern:
     - text: |
         I've read a lot about something called antimicrobial resistance, should I be concerned about this?
+  utter_more_information:
+    - text: |
+        i'm not sure what more to say, i've just been feeling very poorly and haven't been able to sleep. What sort of things would you look out for when prescribing antibiotics?
+  utter_prescription_history:
+    - text: |
+        no, i've never taken antibiotics before.
   utter_please_rephrase:
     - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   utter_default:
@@ -80,3 +95,5 @@ actions:
   - utter_why_prescribe
   - utter_please_rephrase
   - utter_default
+  - utter_prescription_history
+  - utter_more_information
