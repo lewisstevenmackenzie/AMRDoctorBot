@@ -4,22 +4,39 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
   - ask_for_chatbot_number
-  - ask_symptoms
   - confirm
   - deny
   - maybe
   - goodbye
   - greet
-  #- inform
-  - inform_what_is_amr
-  - inform_why_not_prescribe
-  - inform_when_to_prescribe
-  - inform_why_prescribe
-  - inform_antibiotic_symptoms
+  - inform
+  # - inform_what_is_amr
+  # - inform_why_not_prescribe
+  # - inform_when_to_prescribe
+  # - inform_why_prescribe
+  # - inform_antibiotic_symptoms
+  - ask_symptoms
   - ask_more_information
   - Ask_prescription_history
+  - ask_more_questions
   - Prescribe
-
+slots:
+  question1:
+    type: text
+    influence_conversation: false
+    mappings: []
+  question2:
+    type: text
+    influence_conversation: false
+    mappings: []
+  question3:
+    type: text
+    influence_conversation: false
+    mappings: []
+  conversationID:
+    type: text
+    influence_conversation: false
+    mappings: []
 responses:
   utter_greet:
     - text: |
@@ -79,6 +96,9 @@ actions:
   - action_generate_chatbot_number
   - action_repeat_symptoms
   - action_tell_use_case_example
+  - action_ask_random_question
+  - action_final_question
+  - action_end_conversation
   - utter_AMR_concern
   - utter_alternative_medication
   - utter_antibiotic_use

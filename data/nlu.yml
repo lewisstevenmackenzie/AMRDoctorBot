@@ -10,6 +10,10 @@ nlu:
       - hi
       - hey
       - yo
+      - what can i help you with today?
+      - is there anything i can assist you with?
+      - hi im david
+      - hi, what can i do for you?
   - intent: goodbye
     examples: |
       - goodbye
@@ -61,25 +65,20 @@ nlu:
       - it's a possibility.
       - we can look into it
 
-  # - intent: inform
-  #   examples: |
-
-  #     - Although antimicrobial resistance is a serious issue, as a doctor, I work diligently to stay updated on the latest guidelines, employ evidence-based practices, and engage in antimicrobial stewardship programs to address the challenge effectively and ensure optimal patient care.
-  #     - While antimicrobial resistance necessitates awareness and proactive measures, it is essential to understand that as a doctor, I am committed to responsible antibiotic use, prudent prescribing practices, and implementing multidisciplinary approaches to prevent the emergence and spread of resistance within my patient population.
-  #     - of course, sometimes it can be safer to prescribe antibiotics just incase the illness is of a bacterial origin
-  #     - not really, if you only take antibiotics every now and again there shouldnt be much concern regarrding amr
-  #     - usually if a patient has been ill for seceral ays and has an increased temperature, also most patients tend to have a mucus cough
-  #     - some patients  tend to be extremely ill and unable to speak. they might also have a sore throat with a phlemmy cough and temperature.
-
-  - intent: inform_why_not_prescribe
+  - intent: inform
     examples: |
+      - because they are not always the best option to help you recover
+      - Although antimicrobial resistance is a serious issue, as a doctor, I work diligently to stay updated on the latest guidelines, employ evidence-based practices, and engage in antimicrobial stewardship programs to address the challenge effectively and ensure optimal patient care.
+      - While antimicrobial resistance necessitates awareness and proactive measures, it is essential to understand that as a doctor, I am committed to responsible antibiotic use, prudent prescribing practices, and implementing multidisciplinary approaches to prevent the emergence and spread of resistance within my patient population.
+      - of course, sometimes it can be safer to prescribe antibiotics just incase the illness is of a bacterial origin
+      - not really, if you only take antibiotics every now and again there shouldnt be much concern regarrding amr
+      - usually if a patient has been ill for seceral ays and has an increased temperature, also most patients tend to have a mucus cough
+      - some patients  tend to be extremely ill and unable to speak. they might also have a sore throat with a phlemmy cough and temperature.
       - because it is very possible that your illness is probably viral and antibiotics are not effective against this
       - it's important to understand that your symptoms are likely due to a non-bacterial cause, such as a mild respiratory virus, and prescribing antibiotics may not only be unnecessary but could also contribute to the development of antibiotic resistance.
       - beacuse in your situation antibiotics may not be necessary for your condition because it is likely caused by a viral infection, which antibiotics are ineffective against, and your body's immune system is capable of resolving it on its own with symptomatic treatment.
       - beause i'm not sure from your symptoms that your infection is bacterial. it seems to be more of a viral infection
       - the issue is that antibiotics are not a solution to fix all problems. your symptoms sound more close to a viral infection. therefore they'll have no affect
-  - intent: inform_why_prescribe
-    examples: |
       - I recommend considering antibiotics when your condition shows signs of a bacterial infection, such as high fever, severe pain, or worsening symptoms, as they can target the underlying bacterial cause and assist in resolving the infection effectively.
       - As a doctor, I may prescribe antibiotics if your symptoms are consistent with a bacterial infection that requires targeted treatment to prevent complications.
       - Antibiotics may be necessary to combat a severe bacterial infection that could potentially spread and cause further harm, and as a doctor, I may consider prescribing them in such cases.
@@ -87,8 +86,6 @@ nlu:
       - I want to reassure you that your current symptoms, such as a sore throat, are commonly caused by a viral infection, which doesn't respond to antibiotics. It's best to focus on rest, hydration, and over-the-counter remedies to alleviate discomfort rather than relying on antibiotics.
       - it is important for me to prescribe antibiotics in certain cases when there is a clear bacterial infection present, as antibiotics can effectively target and eliminate the bacteria, aiding in a faster recovery and preventing potential complications.
       - antibiotics may be necessary when your symptoms and diagnostic tests indicate a bacterial infection that could lead to serious complications if left untreated, helping to eradicate the bacteria and promote healing.
-  - intent: inform_what_is_amr
-    examples: |
       - Antimicrobial resistance refers to the ability of microorganisms, such as bacteria, viruses, and fungi, to withstand the effects of drugs that were once effective in treating infections, leading to the persistence and spread of drug-resistant strains.
       - Antimicrobial resistance occurs when the medications designed to kill or inhibit the growth of microorganisms become less effective, posing a significant global health threat by reducing the effectiveness of antibiotics and other antimicrobial treatments.
       - Antimicrobial resistance is the phenomenon where microorganisms evolve and adapt, rendering antibiotics and other antimicrobial drugs less effective, posing a serious challenge in the treatment and control of infectious diseases.
@@ -98,14 +95,10 @@ nlu:
       - Antimicrobial resistance is a growing concern for healthcare providers like me because it jeopardizes our ability to effectively combat infections and may lead to higher mortality rates and prolonged illness.
       - Being vigilant about antimicrobial resistance is important for doctors as it highlights the urgent need to preserve the effectiveness of antibiotics, ensuring their availability for future generations and preventing the spread of resistant bacteria that can cause serious health complications.
       - While antimicrobial resistance is a global health concern, it's important to note that as a doctor, I prioritize appropriate antibiotic prescribing, infection control measures, and patient education to mitigate the risks and minimize the impact of resistance.
-  - intent: inform_when_to_prescribe
-    examples: |
       - If there's signs of a baterial infection
       - Antibiotics are a class of medications that are used to treat bacterial infections by killing or inhibiting the growth of bacteria, helping to alleviate symptoms and promote recovery.
       - Antibiotics are drugs designed to combat bacterial infections by targeting and killing bacteria or inhibiting their growth, aiding in the treatment of various infectious diseases.
       - Antibiotics are powerful medications designed to combat bacterial infections by targeting and killing bacteria or inhibiting their growth, aiding in the treatment of various infectious diseases.
-  - intent: inform_antibiotic_symptoms
-    examples: |
       - I will review the patient's medical history, assess the severity and site of the infection, evaluate any known allergies or potential drug interactions, and take into account local antibiotic resistance patterns to ensure the most appropriate and effective treatment. 
       - Before prescribing antibiotics, I will assess the patient's symptoms, medical history, severity of infection, allergies, potential drug interactions, and local antibiotic resistance patterns.
       - Prior to prescribing antibiotics, I consider the patient's symptoms, medical history, infection severity, allergies, potential drug interactions, and local resistance patterns.
@@ -138,12 +131,6 @@ nlu:
       - are you experiencing anymore issues?
       -  before i can prescribe you this medication i'll need to get some more information from you
       - i'll need to ask you some more questions before i can prescribe any medication
-  - intent: Ask_prescription_history
-    examples: |
-      - have you ever taken any antibiotics in the past?
-      - have you been on this medication before?
-      - do you have a history of taking antibiotics?
-      - have you used antibiotics before?
   - intent: Prescribe
     examples: |
       - i'm going to prescribe you some antibiotics
@@ -156,3 +143,22 @@ nlu:
       - perhaps you could try ibuprofen
       - you can get medication from over the counter that will help you to feel better.
       - I don’t think you need any medicine at the moment. You can take regular Paracetamol and drink plenty of water, and make an appointment if your symptoms worsen.
+  - intent: Ask_prescription_history
+    examples: |
+      - have you ever taken any antibiotics in the past?
+      - have you been on this medication before?
+      - do you have a history of taking antibiotics?
+      - have you used antibiotics before?
+  - intent: ask_more_questions
+    examples: |
+      - do you have any more questions?
+      - is there anything else you'd like to know?
+      - can i help you in any other way?
+      - is there anything else i can help you with today?
+      - do you want to know anything else?
+      - any more question?
+      - questions?
+      - do you have anything else that's worrying you today?
+      - what sort of thing do you want me to tell you
+      - what sort of thing do you want to ask me.
+      - ask me anything
