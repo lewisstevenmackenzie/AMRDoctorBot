@@ -7,7 +7,10 @@ stories:
   - story: bye
     steps:
       - intent: goodbye
-      - action: utter_goodbye_only
+      #- action: utter_goodbye_only
+      - action: utter_end_conversation
+      - action: action_generate_chatbot_number
+      - action: utter_goodbye
 
   - story: interactive_story_1
     steps:
@@ -15,6 +18,20 @@ stories:
       - action: action_tell_use_case_example
       - intent: deny
       - action: utter_why_no_antibiotics
+
+  - story: random question path
+    steps:
+      - action: action_ask_random_question
+      - intent: inform
+      - action: action_ask_random_question
+
+  - story: no more random questions path
+    steps:
+      - action: action_ask_random_question
+      - action: action_final_question
+      - intent: deny
+      - action: action_end_conversation
+      - action: action_generate_chatbot_number
 
   - story: maybe storyline
     steps:
@@ -24,9 +41,14 @@ stories:
       - action: utter_antibiotic_use
       - intent: inform
       - action: utter_alternative_medication
+      - intent: Prescribe
+      - action: action_ask_random_question
       - intent: inform
-      - action: utter_end_conversation
-      - action: utter_ask_chat_number
+      - action: action_ask_random_question
+      - action: action_final_question
+      - intent: deny
+      - action: action_end_conversation
+      - action: action_generate_chatbot_number
 
   #1
   - story: more info on symptoms storyline
@@ -45,13 +67,9 @@ stories:
       - intent: confirm
       - action: utter_why_prescribe
       - intent: inform
-      - action: utter_AMR_concern
+      - action: action_ask_random_question
       - intent: inform
-      - action: utter_end_conversation
-      # - action: utter_ask_chat_number
-      # - intent: confirm
-      - action: action_generate_chatbot_number
-      - action: utter_goodbye
+
   #3
   - story: more info on symtoms storyline
     steps:
@@ -65,12 +83,9 @@ stories:
       # - action: utter_what_is_AMR
       # - intent: inform
       - action: utter_alternative_medication
+      - intent: Prescribe
+      - action: action_ask_random_question
       - intent: inform
-      - action: utter_end_conversation
-      # - action: utter_ask_chat_number
-      # - intent: confirm
-      - action: action_generate_chatbot_number
-      - action: utter_goodbye
 
   - story: interactive_story_2
     steps:
@@ -83,9 +98,8 @@ stories:
       # - action: utter_what_is_AMR
       # - intent: inform
       - action: utter_alternative_medication
-      - intent: inform
-      - action: utter_end_conversation
-      - action: utter_ask_chat_number
+      - intent: Prescribe
+      - action: action_ask_random_question
 
   - story: interactive_story_3
     steps:
@@ -97,14 +111,9 @@ stories:
       # - action: utter_what_is_AMR
       # - intent: inform
       - action: utter_alternative_medication
-      - intent: inform
-      - action: utter_end_conversation
-      # - action: utter_ask_chat_number
-      # - intent: confirm
-      - action: action_generate_chatbot_number
-      - action: utter_goodbye
+      - intent: Prescribe
 
-  - story: interactive_story_3
+  - story: interactive_story_4
     steps:
       - intent: greet
       - action: action_tell_use_case_example
@@ -136,41 +145,46 @@ stories:
   #     - action: action_generate_chatbot_number
   #     - action: utter_goodbye
 
-  # - story: deny chatbot number and ask again
-  #   steps:
-  #     - action: utter_ask_chat_number
-  #     - intent: deny
-  #     - action: utter_confirm_refusal
-  #     - intent: ask_for_chatbot_number
-  #     - action: action_generate_chatbot_number
-  #     - action: utter_goodbye
+  - story: ask for chatbot ID
+    steps:
+      - intent: ask_for_chatbot_number
+      - action: action_generate_chatbot_number
 
-  - story: interactive_story_4
+  - story: interactive_story_5
     steps:
       - intent: greet
       - action: action_tell_use_case_example
       - intent: confirm
       - action: utter_why_prescribe
       - intent: inform
-      - action: utter_AMR_concern
+      - action: action_ask_random_question
       - intent: inform
-      - action: utter_end_conversation
-      # - action: utter_ask_chat_number
-      # - intent: confirm
-      - action: action_generate_chatbot_number
-      - action: utter_goodbye
 
   - story: repeat symptoms
     steps:
       - intent: ask_symptoms
       - action: action_repeat_symptoms
 
-  - story: interactive_story_5
+  - story: interactive_story_6
     steps:
       - intent: greet
       - action: action_tell_use_case_example
       - intent: deny
       - action: utter_why_no_antibiotics
       - intent: inform
-      - action: utter_what_is_AMR
-# it's not that simple, id need to do a further examination before prescribing you any medication
+      - action: action_ask_random_question
+  # it's not that simple, id need to do a further examination before prescribing you any medication
+
+  - story: test story
+    steps:
+      - intent: greet
+      - action: action_tell_use_case_example
+      - intent: ask_more_information
+      - action: utter_more_information
+      - intent: inform
+      - action: action_ask_random_question
+
+  - story: prescription history
+    steps:
+      - intent: Ask_prescription_history
+      - action: utter_prescription_history

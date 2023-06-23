@@ -1,0 +1,36 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"maybe\"}}]": "action_end_conversation",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"maybe\"}}, {\"prev_action\": {\"action_name\": \"action_end_conversation\"}, \"user\": {\"intent\": \"maybe\"}}]": "action_generate_chatbot_number",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"maybe\"}}, {\"prev_action\": {\"action_name\": \"action_end_conversation\"}, \"user\": {\"intent\": \"maybe\"}}, {\"prev_action\": {\"action_name\": \"action_generate_chatbot_number\"}, \"user\": {\"intent\": \"maybe\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}]": "action_end_conversation",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"action_end_conversation\"}, \"user\": {\"intent\": \"deny\"}}]": "action_generate_chatbot_number",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"action_end_conversation\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"action_generate_chatbot_number\"}, \"user\": {\"intent\": \"deny\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_final_question",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_final_question\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_more_questions\"}}]": "action_ask_random_question",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_more_questions\"}}, {\"prev_action\": {\"action_name\": \"action_ask_random_question\"}, \"user\": {\"intent\": \"ask_more_questions\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "utter_please_rephrase",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_please_rephrase\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_final_question\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"maybe\"}}, {\"prev_action\": {\"action_name\": \"action_end_conversation\"}, \"user\": {\"intent\": \"maybe\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"maybe\"}}, {\"prev_action\": {\"action_name\": \"action_end_conversation\"}, \"user\": {\"intent\": \"maybe\"}}, {\"prev_action\": {\"action_name\": \"action_generate_chatbot_number\"}, \"user\": {\"intent\": \"maybe\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_final_question\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"maybe\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_more_questions\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_please_rephrase\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_more_questions\"}}, {\"prev_action\": {\"action_name\": \"action_ask_random_question\"}, \"user\": {\"intent\": \"ask_more_questions\"}}]",
+      "predicting default action with intent session_start"
+    ]
+  }
+}

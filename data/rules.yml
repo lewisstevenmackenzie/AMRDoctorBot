@@ -4,6 +4,31 @@ rules:
       - intent: nlu_fallback
       - action: utter_please_rephrase
 
+  - rule: no more  userquestions but there is a doctor response
+    steps:
+      - action: action_final_question
+      - intent: confirm
+      - action: action_final_question
+
+  - rule: no more userquestions or doctor questions
+    steps:
+      - action: action_final_question
+      - intent: deny
+      - action: action_end_conversation
+      - action: action_generate_chatbot_number
+
+  - rule: no more userquestions and probably no doctor questions
+    steps:
+      - action: action_final_question
+      - intent: maybe
+      - action: action_end_conversation
+      - action: action_generate_chatbot_number
+
+  - rule: trigger random question
+    steps:
+      - intent: ask_more_questions
+      - action: action_ask_random_question
+
   # - rule: user wants number
   #   steps:
   #     - action: utter_ask_chat_number
@@ -23,4 +48,8 @@ rules:
   #     - intent: confirm
   #     - action: utter_goodbye_no_number
 #Hello Doctor, I'm not feeling 100% today and I think I might have a chest infection. I've had a persistent cough for  a couple of days, I've been coughing up yellow phlegm and I've got a temperature. I'm also feeling quite breathless. Can I have antibiotics, please?
+
 # conda activate installingrasa
+# rasa run --enable-api
+# rasa run actions
+# python talkToPatients.py
