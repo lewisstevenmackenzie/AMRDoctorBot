@@ -33,6 +33,14 @@ slots:
     type: text
     influence_conversation: false
     mappings: []
+  question4:
+    type: text
+    influence_conversation: false
+    mappings: []
+  UseCaseNum:
+    type: text
+    influence_conversation: false
+    mappings: []
   conversationID:
     type: text
     influence_conversation: false

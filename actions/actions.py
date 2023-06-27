@@ -43,20 +43,22 @@ class ActionTellUseCaseExample(Action):
 
         UseCase1 = "Hi Doctor, I’m not feeling 100% today. I think I might have a cold. I’ve got a runny nose, my throat is also a bit red and sore, and I’ve had a dry cough for a couple of days. Can I have some antibiotics, please?"
 
-        UseCase2 = "Hello Doctor, I feel terrible today and  think I've got a chest infection. I've had a persistent cough for a couple of days, I've been coughing up yellow phlegm and I've got a temperature. I'm also feeling quite breathless. Can I have antibiotics, please? "
+        UseCase2 = "Hello Doctor, I feel terrible today and  think I've got a chest infection. I've had a persistent cough for a couple of days, I've been coughing up yellow phlegm and I've got a temperature. I'm also feeling quite breathless. Can I have antibiotics, please?"
 
         rnd_num = rnd.random()
 
         if rnd_num < 0.5:
             print("Use case 1")
+            UseCaseNumber = 1
             msg = UseCase1
         else:
             print("Use Case 2")
             msg = UseCase2
+            UseCaseNumber = 2
 
         dispatcher.utter_message(text=msg)
 
-        return []
+        return [SlotSet("UseCaseNum", UseCaseNumber)]
 
 
 class ActionGenerateChatbotNumber(Action):
@@ -113,12 +115,18 @@ class ActionRepeatSymptoms(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        symptoms1 = "I’ve got a runny nose, my throat is also a bit red and sore, and I’ve had a dry cough for a couple of days. Do you think that antibiotics will help me feel better?"
-        msg = f"{symptoms1}\n"
+        useCaseNumber = tracker.slots.get("UseCaseNum")
 
-        # msg = msg + f"Hi, my name is sarah, I'm 40 years old and I've got a bacterial infection that is causing swelling in my throat etc.\n"
+        symptoms1 = "I’ve got a runny nose, my throat is also a bit red and sore, and I’ve had a dry cough for a couple of days. "
 
-        # msg = msg + f"Would you recommend an antibiotic to treat me?\n"
+        symptoms2 = "I've got a really bad chest infection as well as a terribly dry cough that's lasted for a couple days now. "
+
+        if useCaseNumber == "1":
+            msg = f"{symptoms1}\n"
+        elif useCaseNumber == "2":
+            msg = f"{symptoms2}\n"
+
+        msg = msg + "Do you think that antibiotics will help me feel better?\n"
 
         dispatcher.utter_message(text=msg)
 
@@ -150,6 +158,7 @@ class ActionRandomQuestion(Action):
         Q1 = tracker.slots.get("question1")
         Q2 = tracker.slots.get("question2")
         Q3 = tracker.slots.get("question3")
+        Q4 = tracker.slots.get("question4")
 
         if Q1 == "True":
             del questions[0]
@@ -160,12 +169,17 @@ class ActionRandomQuestion(Action):
         if Q3 == "True":
             del questions[2]
             counter += 1
+        if Q4 == "True":
+            del questions[3]
+            counter += 1
         if Q1 is not None:
             print("Q1: " + Q1)
         if Q2 is not None:
             print("Q2: " + Q2)
         if Q3 is not None:
             print("Q3: " + Q3)
+        if Q4 is not None:
+            print("Q3: " + Q4)
 
         print("This is the length of questions: " + str(len(questions)))
         print("THis is the counter value: " + str(counter))
