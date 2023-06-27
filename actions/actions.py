@@ -43,7 +43,7 @@ class ActionTellUseCaseExample(Action):
 
         UseCase1 = "Hi Doctor, I’m not feeling 100% today. I think I might have a cold. I’ve got a runny nose, my throat is also a bit red and sore, and I’ve had a dry cough for a couple of days. Can I have some antibiotics, please?"
 
-        UseCase2 = "Hello Doctor, I feel terrible today and  think I've got a chest infection. I've had a persistent cough for  a couple of days, I've been coughing up yellow phlegm and I've got a temperature. I'm also feeling quite breathless. Can I have antibiotics, please? "
+        UseCase2 = "Hello Doctor, I feel terrible today and  think I've got a chest infection. I've had a persistent cough for a couple of days, I've been coughing up yellow phlegm and I've got a temperature. I'm also feeling quite breathless. Can I have antibiotics, please? "
 
         rnd_num = rnd.random()
 
@@ -143,7 +143,8 @@ class ActionRandomQuestion(Action):
         questions = [
             "Thanks, I also saw on an information poster somthing about antimicrobial resistance. What's that?",
             "Okay, thanks for helping me. I was also curious as to when would you normally prescribe antibiotics?",
-            "I've got a bit of a random question but ",
+            "I've got a bit of a random question but what happens if i stop taking antibiotics when I feel better but before the end of my cycle?",
+            "What sort of medication would you suggest I take if not antibiotics?",
         ]
 
         Q1 = tracker.slots.get("question1")
@@ -166,7 +167,7 @@ class ActionRandomQuestion(Action):
         if Q3 is not None:
             print("Q3: " + Q3)
 
-        print("This is the length of wuestions: " + str(len(questions)))
+        print("This is the length of questions: " + str(len(questions)))
         print("THis is the counter value: " + str(counter))
 
         if len(questions) == 0:
