@@ -5,7 +5,7 @@ import json
 def send_utt(user_ID, msg):
     json = {"sender": user_ID, "message": msg}
 
-    response = requests.post("http://localhost:5005/webhooks/rest/webhook", json=json)
+    response = requests.post("http://app:5005/webhooks/rest/webhook", json=json)
     final_json = response.json()
     print(final_json)
 
