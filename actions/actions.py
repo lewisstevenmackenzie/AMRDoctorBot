@@ -160,18 +160,21 @@ class ActionRandomQuestion(Action):
         Q3 = tracker.slots.get("question3")
         Q4 = tracker.slots.get("question4")
 
-        if Q1 == "True":
-            del questions[0]
-            counter += 1
-        if Q2 == "True":
-            del questions[1]
+        # delete in reverse order so no indexing issues occur.
+
+        if Q4 == "True":
+            del questions[3]
             counter += 1
         if Q3 == "True":
             del questions[2]
             counter += 1
-        if Q4 == "True":
-            del questions[3]
+        if Q2 == "True":
+            del questions[1]
             counter += 1
+        if Q1 == "True":
+            del questions[0]
+            counter += 1
+
         if Q1 is not None:
             print("Q1: " + Q1)
         if Q2 is not None:
@@ -206,7 +209,7 @@ class ActionRandomQuestion(Action):
             slotToBeSet = "question" + str(qNumber + 1)
             return [SlotSet(slotToBeSet, "True")]
 
-        msg = "I think that's all the questions i have for you."
+        msg = "OKay, thanks for the information, I think that's all the questions I  have for you."
 
         dispatcher.utter_message(text=msg)
 
@@ -223,7 +226,7 @@ class ActionFinalQuestion(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        msg = "Is there anything else I should know about antibiotics?"
+        msg = "Is there anything else that I should know about antibiotics?"
 
         dispatcher.utter_message(text=msg)
 
