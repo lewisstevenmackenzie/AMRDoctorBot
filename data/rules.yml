@@ -53,3 +53,4 @@ rules:
 # rasa run --enable-api
 # rasa run actions
 # python talkToPatients.py
+#  rasa run --log-file out.log --cors * --enable-api
