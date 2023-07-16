@@ -53,4 +53,9 @@ rules:
 # rasa run --enable-api
 # rasa run actions
 # python talkToPatients.py
+
+# source ./venv/bin/activate
 #  rasa run --log-file out.log --cors * --enable-api
+#  rasa run actions --port 5055
+
+# tmux
