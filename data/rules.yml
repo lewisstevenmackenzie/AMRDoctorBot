@@ -58,4 +58,7 @@ rules:
 #  rasa run --log-file out.log --cors * --enable-api
 #  rasa run actions --port 5055
 
-# tmux
+# tmux new -s rasaServer
+# tmux new -s actionServer
+# cntrl + b [ to scroll
+# cntrl + b % to split
