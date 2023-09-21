@@ -1,37 +1,13 @@
-# FROM python:3.10
-
-# RUN python -m pip install rasa
-
-# WORKDIR /app
-# COPY . .
-
-# RUN rasa train nlu
-
-# USER 1001
-
-# ENTRYPOINT [ "rasa" ]
-
-# CMD [ "run", "--enable-api", "--port" ,"8080" ]
-
-
-# Extend the official Rasa SDK image
-FROM rasa/rasa-sdk:3.6.0
-
-# Use subdirectory as working directory
-WORKDIR /app
-
-# Copy any additional custom requirements, if necessary (uncomment next line)
-# COPY actions/requirements-actions.txt ./
-
-# Change back to root user to install dependencies
+FROM rasa/rasa:3.1.0
+WORKDIR '/app'
+COPY . /app
 USER root
-
-# Install extra requirements for actions code, if necessary (uncomment next line)
-# RUN pip install -r requirements-actions.txt
-RUN python -m pip install rasa
-
-# Copy actions folder to working directory
-COPY ./actions /app/actions
-
-# By best practices, don't run the code with root user
-USER 1001
+# WORKDIR /app
+# COPY . /app
+COPY ./data /app/data
+COPY ./models /app/models
+RUN  #rasa train
+VOLUME /app
+VOLUME /app/data
+VOLUME /app/models
+CMD ["run","-m","/app/models","--enable-api","--cors","*","--debug" ,"--endpoints", "endpoints.yml", "--log-file", "out.log", "--debug"]

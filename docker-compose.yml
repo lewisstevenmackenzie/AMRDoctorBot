@@ -1,17 +1,21 @@
-version: "3.0"
+version: '3'
 services:
   rasa:
-    image: rasa/rasa:3.6.0-full
-    ports:
-      - 5005:5005
+    container_name: "rasa_server"
+    user: root
+    build:
+      context:  .
     volumes:
-      - ./:/app
-    command:
-      - run
-  app:
-    image: rasa/rasa-sdk:3.6.0
-    expose:
-      - "5055"
-#ssh keygen gen
-#tmux
+      - "./:/app"
+    ports:
+      - "5005:5005"
 
+  action_server:
+    container_name: "action_server"
+    build:
+      context: actions
+    volumes:
+      - ./actions:/app/actions
+      - ./data:/app/data
+    ports:
+      - 5055:5055
