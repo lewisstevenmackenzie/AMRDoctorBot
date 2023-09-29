@@ -1,15 +1,12 @@
 language: en
 pipeline:
 - name: SpacyNLP
-  model: "en_core_web_sm"
+  model: "en_core_web_md"
 - name: SpacyTokenizer
 - name: SpacyFeaturizer
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
-#- name: LanguageModelFeaturizer
-#  model_name: "bert"
-#  model_weights: "rasa/LaBSE"
 - name: CountVectorsFeaturizer
   analyzer: char_wb
   min_ngram: 1

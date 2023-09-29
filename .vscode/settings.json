@@ -1,9 +1,0 @@
-{
-  "yaml.schemas": {
-    "https://json.schemastore.org/yamllint.json": "file:///c%3A/Users/Lewis%27%20Laptop/Documents/University/YanchaoJob/AntiMicrobialProfesionalV3/data/rules.yml"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
-  },
-  "python.formatting.provider": "none"
-}
