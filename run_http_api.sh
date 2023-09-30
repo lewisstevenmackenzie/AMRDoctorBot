@@ -9,7 +9,7 @@ echo $SCRIPTPATH
 PROJECTROOTPATH="$(dirname "$SCRIPTPATH")"
 echo $PROJECTROOTPATH
 
-pyenv local 3.7.9
+#pyenv local 3.7.9
 
 python -m venv .venv
 
@@ -29,4 +29,4 @@ source ${SCRIPTPATH}/.venv/bin/activate
 "${SCRIPTPATH}"/.venv/bin/python3 -m spacy link en_core_web_sm en
 
 source ${SCRIPTPATH}/.venv/bin/activate
-rasa run --enable-api --cors "*" --debug --endpoints "endpoints.yml" --log-file "out.log" --debug
+rasa run --enable-api --cors "*" --debug --endpoints "endpoints.yml" --log-file "out.log" --debug --port 5005
